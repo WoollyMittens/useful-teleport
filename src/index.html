@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>teleport.js: Teleport DOM elements</title>
+		<style>
+			html { font-family:Sans-Serif; font-size:75%; height:100%; }
+			body { _height:100%; line-height:180%; margin:0; min-height:100%; padding:1%; }
+			.example { max-width:960px; margin:0 auto; padding:0; clear:both; }
+			.example > article, .example > aside { width:98%; padding:2%; }
+			.example-left > article, .example-left > aside { width:48%; padding:1%; float:left; }
+			.example-right > article, .example-right > aside { width:48%; padding:1%; float:right; }
+		</style>
+	</head>
+	<body>
+		<section class="example example-right">
+			<article>
+				<h2>Teleport DOM elements</h2>
+				<p>Move elements between containers based on screen size.</p>
+				<p><a class="button downloadButton" href="http://github.com/WoollyMittens/useful-aspectratio" target="_blank">Download (GitHub)</a></p>
+			</article>
+			<aside>
+
+				<!-- Cut below this -->
+				<style>@import url("./css/teleport.css");</style>
+				<section class="teleport-example">
+					<header>
+						<button class="teleport-toggle" onclick="var nav=document.querySelector('.teleport-example nav'); nav.className=(/closed/.test(nav.className))?'open':'closed';">Menu</button>
+						<label class="teleport-search"><input type="text" name="keyword" placeholder="Search"/><button>Search</button></label>
+					</header>
+					<nav class="closed">
+						<a href="#lorem">Lorem</a>
+						<a href="#ipsum">Ipsum</a>
+						<a href="#dolor">Dolor</a>
+						<a href="#sit_amet">Sit Amet</a>
+					</nav>
+					<article>
+						<h2>Lorem Ipsum</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</article>
+					<footer>
+						Dolor sit amet
+					</footer>
+				</section>
+				<script src="./js/teleport.js"></script>
+				<script>
+					new Teleport({
+						'element': document.querySelector('.teleport-search'),
+					  'breakpoints': [{
+							'container': document.querySelector('.teleport-example nav'),
+							'condition': '(max-width:767px)',
+							'before': document.querySelector('.teleport-example nav :first-child')
+						}, {
+							'container': document.querySelector('.teleport-example header'),
+							'condition': '(min-width:768px)'
+						}]
+					});
+				</script>
+				<!-- Cut above this -->
+
+			</aside>
+		</section>
+	</body>
+</html>

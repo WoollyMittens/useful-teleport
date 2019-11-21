@@ -1,0 +1,100 @@
+.teleport {
+	&-example {
+		border: solid 1px #000;
+		*, *:before, *:after {
+			box-sizing: border-box;
+		}
+		header,
+		footer {
+			background-color: #ccc;
+			padding: 1rem;
+			label {}
+		}
+		header {
+			border-bottom: solid 1px #000;
+			@media(min-width:768px) {
+				text-align: right;
+			}
+		}
+		footer {
+			border-top: solid 1px #000;
+		}
+		button {
+			cursor: pointer;
+			border: none;
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+			text-indent: 125%;
+			overflow: hidden;
+			padding: 0;
+			margin: 0;
+			width: 1.6rem;
+			height: 1.6rem;
+		}
+		nav {
+			display: flex;
+			justify-content: space-around;
+			background-color: #eee;
+			border-bottom: solid 1px #000;
+			padding: 0.5rem 1rem;
+			@media(max-width:767px) {
+				margin: -1px 0 0 0;
+				padding: 0;
+				flex-direction: column;
+				transition: max-height ease-in-out 1000ms;
+				max-height: 0;
+				overflow: hidden;
+				&.open {
+					max-height: 20rem;
+				}
+				a {
+					display: block;
+					padding: 0.5rem 1rem;
+					border-top: solid 1px #000;
+					&:hover {}
+				}
+			}
+		}
+		article {
+			height: 20rem;
+			overflow: auto;
+			padding: 1rem;
+			h2 {
+				margin-top: 0;
+			}
+			p {
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+	&-toggle {
+		background: Transparent url("../img/icon-menu.svg");
+		@media(min-width:768px) {
+			display: none;
+		}
+	}
+	&-search {
+		@media(max-width:767px) {
+			border-top: solid 1px #000;
+			padding: 1rem;
+		}
+		input[type=text] {
+			vertical-align: middle;
+			margin-right: 0.3em;
+			border: solid 1px #000;
+			height: 2.2rem;
+			padding: 0.1rem 0.5rem;
+			@media(max-width:767px) {
+				width: 100%;
+				margin-right: -2.2rem;
+			}
+		}
+		button {
+			vertical-align: middle;
+			background: Transparent url("../img/icon-search.svg");
+		}
+	}
+}
