@@ -23,7 +23,7 @@ Or use [Require.js](https://requirejs.org/).
 ```js
 requirejs([
 	'js/teleport.js'
-], function(Aspectratio) {
+], function(Teleport) {
 	...
 });
 ```
