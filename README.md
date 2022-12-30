@@ -2,8 +2,6 @@
 
 Move elements between containers based on screen size.
 
-Try the <a href="http://www.woollymittens.nl/default.php?url=useful-teleport">demo</a>.
-
 ## How to include the script
 
 The stylesheet is best included in the header of the document.
